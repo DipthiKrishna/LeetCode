@@ -8,10 +8,10 @@ HAVING o.order_id IS NULL OR c.name = 'RED' ;*/
 
 --WITH redcomp AS
             
-SELECT s.name
-FROM SalesPerson s
-WHERE s.sales_id NOT IN (SELECT o.sales_id
-            FROM Orders o
-            LEFT JOIN Company c ON o.com_id = c.com_id
-            WHERE c.name = 'RED');
+SELECT name
+FROM SalesPerson
+WHERE sales_id NOT IN (SELECT sales_id
+            FROM Orders
+            LEFT JOIN Company ON Orders.com_id = Company.com_id
+            WHERE name = 'RED');
 
