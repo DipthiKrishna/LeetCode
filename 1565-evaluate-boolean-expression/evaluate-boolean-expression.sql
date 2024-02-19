@@ -6,8 +6,8 @@ SELECT e.left_operand,
         CASE WHEN e.operator = '>'  AND v1.value > v2.value THEN 'true' 
             WHEN e.operator = '<' AND v1.value < v2.value THEN 'true'
             WHEN e.operator = '=' AND v1.value = v2.value THEN 'true'
-         ELSE 'false'
-END AS value
+            ELSE 'false'
+        END AS value
 FROM expressions e
 INNER JOIN Variables v1 
     ON e.left_operand=v1.name 
