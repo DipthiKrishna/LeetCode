@@ -1,6 +1,6 @@
 -- Write your PostgreSQL query statement below
 
-SELECT e.left_operand,
+SELECT  e.left_operand,
         e.operator,
         e.right_operand,
         CASE WHEN e.operator = '>'  AND v1.value > v2.value THEN 'true' 
