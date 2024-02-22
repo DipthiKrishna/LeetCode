@@ -1,6 +1,7 @@
 -- Write your PostgreSQL query statement below
-select warehouse.name as warehouse_name,SUM(units*width*products.length*height) as volume
-from warehouse
-left join products
-using(product_id)
-group by warehouse.name;
+SELECT warehouse.name AS warehouse_name,
+SUM(units*width*products.length*height) AS volume
+FROM warehouse
+LEFT JOIN products
+ON warehouse.product_id=products.product_id
+GROUP BY warehouse.name;
