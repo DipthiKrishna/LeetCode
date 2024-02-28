@@ -1,5 +1,4 @@
 -- Write your PostgreSQL query statement below
-SELECT u.name,SUM(t.amount) AS balance
-FROM users u
-LEFT JOIN transactions t ON u.account = t.account
-GROUP BY u.name HAVING SUM(t.amount) >10000;
+select u.name,sum(t.amount) as balance
+from users u left join transactions t on u.account = t.account
+group by u.name having SUM(t.amount) >10000;
