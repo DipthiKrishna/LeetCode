@@ -5,6 +5,7 @@ SELECT country.name AS country
 FROM country
 LEFT JOIN code ON country.country_code=code.country_code
 LEFT JOIN calls ON code.id IN (calls.caller_id,calls.callee_id)
-GROUP BY country.name HAVING AVG(calls.duration) > (SELECT AVG(duration) FROM calls);
+GROUP BY country.name
+HAVING AVG(calls.duration) > (SELECT AVG(duration) FROM calls);
 
         
